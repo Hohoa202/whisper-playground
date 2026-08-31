@@ -62,7 +62,7 @@ class Client:
 
     def handle_chunk(self, chunk):
         audio = decode_audio(chunk)
-        audio = preprocess_audio(audio)
+        # audio = preprocess_audio(audio)
         speech_present, speech_confidence = silero_vad(audio)
         # speech_present, speech_confidence = True, 1.0
         logging.info(f"VAD: speech={speech_present}, confidence={speech_confidence:.3f}")
