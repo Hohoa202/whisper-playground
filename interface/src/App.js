@@ -58,8 +58,8 @@ const App = ({ classes }) => {
   const [audioData, setAudioData] = useState([]);
   const [isRecording, setIsRecording] = useState(false);
   const [isStreamPending, setIsStreamPending] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("english");
-  const [selectedModel, setSelectedModel] = useState("small");
+  const [selectedLanguage, setSelectedLanguage] = useState("vietnamese");
+  const [selectedModel, setSelectedModel] = useState("large-v3");
   const [transcribeTimeout, setTranscribeTimeout] = useState(5);
   const [beamSize, setBeamSize] = useState(1);
   const [errorMessages, setErrorMessages] = useState(null);
