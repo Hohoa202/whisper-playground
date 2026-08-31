@@ -1,6 +1,6 @@
 import logging
 from queue import Queue
-from vad_service import silero_vad
+from vad_service import silero_vad, preprocess_audio
 from diart.utils import decode_audio
 from utils import get_transcriber_information
 from transcription.whisper_transcriber import WhisperTranscriber
@@ -61,7 +61,9 @@ class Client:
             logging.info("Transcription not sent, client disconnected")
 
     def handle_chunk(self, chunk):
-        speech_present, speech_confidence = silero_vad(decode_audio(chunk))
+        audio = decode_audio(chunk)
+        audio = preprocess_audio(audio)
+        speech_present, speech_confidence = silero_vad(audio)
         # speech_present, speech_confidence = True, 1.0
         logging.info(f"VAD: speech={speech_present}, confidence={speech_confidence:.3f}")
         if speech_present:

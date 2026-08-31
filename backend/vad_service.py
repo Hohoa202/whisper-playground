@@ -1,7 +1,23 @@
 import torch
 import numpy as np
 from config import SPEECH_CONFIDENCE_THRESHOLD
+import noisereduce as nr
 
+
+def preprocess_audio(audio, sample_rate=16000):
+    audio = np.asarray(audio, dtype=np.float32).reshape(-1)
+
+    audio = nr.reduce_noise(
+        y=audio,
+        sr=sample_rate,
+        stationary=False,
+        prop_decrease=0.7
+    )
+
+    peak = np.max(np.abs(audio))
+    if peak > 0:
+        audio = audio / peak * 0.9
+    return audio.astype(np.float32)
 
 class SileroVAD:
 
