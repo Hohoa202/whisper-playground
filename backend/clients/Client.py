@@ -29,8 +29,7 @@ class Client:
         except TypeError:
             logging.warning(f"Invalid beam size {self.config.get('beamSize')}, defaulting to 1")
             beam_size = 1
-        self.transcriber = WhisperTranscriber(model_size=whisper_model_size, language_code=language_code,
-                                              beam_size=beam_size)
+        self.transcriber = WhisperTranscriber(model_size=whisper_model_size, language_code=language_code, beam_size=beam_size)
         self.transcription_timeout = float(self.config.get("transcribeTimeout", 5))
         self.state = ClientState.INITIALIZED
 
