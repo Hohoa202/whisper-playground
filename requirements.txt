@@ -1,0 +1,13 @@
+diart==0.9.2
+pyannote.audio==3.1.1
+torch==2.1.2
+torchaudio==2.1.2
+torchvision==0.16.2
+matplotlib==3.7.5
+huggingface-hub==0.24.7
+faster-whisper==1.2.1
+numpy==1.26.4
+stable-ts
+python-socketio
+aiohttp
+scipy
