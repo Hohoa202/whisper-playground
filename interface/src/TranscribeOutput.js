@@ -41,7 +41,7 @@ const TranscribeOutput = ({ data, classes }) => {
 
       if (speaker !== currentSpeaker) {
         if (formattedText.length > 0) {
-          formattedText += "\n\n";
+          formattedText += "\n";
         }
         formattedText += `${speakerName}: ${text}`;
         currentSpeaker = speaker;

@@ -62,8 +62,8 @@ class Client:
             logging.info("Transcription not sent, client disconnected")
 
     def handle_chunk(self, chunk):
-        # speech_present, speech_confidence = silero_vad(decode_audio(chunk))
-        speech_present, speech_confidence = True, 1.0
+        speech_present, speech_confidence = silero_vad(decode_audio(chunk))
+        # speech_present, speech_confidence = True, 1.0
         logging.info(f"VAD: speech={speech_present}, confidence={speech_confidence:.3f}")
         if speech_present:
             self.audio_chunks.put(chunk)

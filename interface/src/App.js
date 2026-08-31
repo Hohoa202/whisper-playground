@@ -26,11 +26,11 @@ const useStyles = () => ({
   root: {
     display: "flex",
     flex: "1",
-    margin: "100px 0px 100px 0px",
+    margin: "40px 0px 20px 0px",
     alignItems: "center",
     textAlign: "center",
     flexDirection: "column",
-    padding: "30px",
+    padding: "0 30px",
   },
   title: {
     marginBottom: "30px",
@@ -42,11 +42,11 @@ const useStyles = () => ({
   },
   transcribeOutput: {
     overflow: "auto",
-    marginBottom: "40px",
+    marginBottom: "20px",
     maxWidth: "1200px",
   },
   buttonsSection: {
-    marginBottom: "40px",
+    marginBottom: "8px",
   },
   recordIllustration: {
     width: "100px",
