@@ -58,11 +58,15 @@ class WhisperModelSize(Enum):
     MEDIUM_ENGLISH = 'medium.en'
     LARGE_V1 = 'large-v1'
     LARGE_V2 = 'large-v2'
+    LARGE_V3 = 'large-v3'
+    LARGE_V3_TURBO = 'large-v3-turbo'
 
 
 NON_ENGLISH_SPECIFIC_MODELS = [
     WhisperModelSize.LARGE_V1,
-    WhisperModelSize.LARGE_V2
+    WhisperModelSize.LARGE_V2,
+    WhisperModelSize.LARGE_V3,
+    WhisperModelSize.LARGE_V3_TURBO
 ]
 
 REQUIRED_AUDIO_TYPE = "float32"

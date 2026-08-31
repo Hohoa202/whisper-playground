@@ -12,6 +12,8 @@ export const WHISPER_MODEL_OPTIONS = [
   "medium",
   "large-v1",
   "large-v2",
+  "large-v3",
+  "large-v3-turbo",
 ];
 export const SUPPORTED_LANGUAGES = [
   "english",
