@@ -59,6 +59,7 @@ class SequentialClient(Client):
                 if chunk_counter >= batch_size:
                     buffer_float32 = self.convert_buffer_to_float32(buffer)
                     self.transcribe_buffer(buffer_float32)
+                    buffer = None
                     chunk_counter = 0
 
                 if not self.audio_chunks.empty():
