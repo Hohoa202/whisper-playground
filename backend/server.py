@@ -8,7 +8,6 @@ import threading
 import asyncio
 from urllib.parse import parse_qs
 from config import PARAMETERS
-import ssl
 
 # Configure logging settings
 logging.basicConfig()
@@ -58,18 +57,5 @@ def handle_chunk(sid, chunk):
 
 
 if __name__ == "__main__":
-    # web.run_app(app, port=8000)
+    web.run_app(app, port=8000)
     # web.run_app(app, host="0.0.0.0", port=80)
-    ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-
-    ssl_context.load_cert_chain(
-        certfile="cert.pem",
-        keyfile="key.pem"
-    )
-
-    web.run_app(
-        app,
-        host="0.0.0.0",
-        port=8000,
-        ssl_context=ssl_context
-    )
