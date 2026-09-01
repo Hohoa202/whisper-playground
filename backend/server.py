@@ -56,6 +56,22 @@ def handle_chunk(sid, chunk):
     client_manager.receive_chunk(sid, chunk)
 
 
+# if __name__ == "__main__":
+#     # web.run_app(app, port=8000)
+#     web.run_app(app, host="0.0.0.0", port=80)
+
+import ssl
+
 if __name__ == "__main__":
-    # web.run_app(app, port=8000)
-    web.run_app(app, host="0.0.0.0", port=80)
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    ssl_context.load_cert_chain(
+        certfile="cert.pem",
+        keyfile="key.pem"
+    )
+
+    web.run_app(
+        app,
+        host="0.0.0.0",
+        port=443,
+        ssl_context=ssl_context
+    )
